@@ -9,6 +9,32 @@
 <div class="container body-content">
 
     <!-- // TODO #2 - display the job fields, one per row -->
+    <!-- name attr. of model objects and 'name' (with their getters) in Job.java -->
+    <!--if th:object="${ obj }" and th:text="*{att getter}"  or th:text="${job.getName}" no th:object -->
+    <table class= "job-listing" th:object="${job}">
+
+        <tr>
+            <td>Name</td>
+            <td th:text="*{getName()}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="*{getEmployer()}"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="*{getLocation()}"></td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td th:text="*{getPositionType()}"></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="*{getCoreCompetency()}"></td>
+        </tr>
+
+    </table>
 
 </div>
 

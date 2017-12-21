@@ -9,6 +9,8 @@ public class Job {
     private static int nextId = 1;
 
     private String name;
+
+    //field variables that represent each class
     private Employer employer;
     private Location location;
     private PositionType positionType;

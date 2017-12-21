@@ -22,11 +22,24 @@ public class JobForm {
     @NotNull
     private int employerId;
 
+    @NotNull
+    //@Size(min=1, message = "this location field is empty")
+    private int locationId;
+
+    @NotNull
+    //@Size(min=1, message = "this field for positionType is empty")
+    private int positionTypeId;
+
+    @NotNull
+    //@Size(min=1, message = "this skill field is empty")
+    private int coreCompetencyId;
+
     /*
         TODO #3 - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
+
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -40,10 +53,15 @@ public class JobForm {
         /*
             TODO #4 - populate the other ArrayList collections needed in the view
         */
-
         employers = jobData.getEmployers().findAll();
+        locations = jobData.getLocations().findAll();
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+        positionTypes = jobData.getPositionTypes().findAll();
 
     }
+
+
+    //Getters and Setters for field variables
 
     public String getName() {
         return name;
@@ -53,6 +71,30 @@ public class JobForm {
         this.name = name;
     }
 
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public int getPositionTypeId() {
+        return positionTypeId;
+    }
+
+    public void setPositionTypeId(int positionTypeId) {
+        this.positionTypeId = positionTypeId;
+    }
+
+    public int getCoreCompetencyId() {
+        return coreCompetencyId;
+    }
+
+    public void setCoreCompetencyId(int coreCompetencyId) {
+        this.coreCompetencyId = coreCompetencyId;
+    }
+
     public int getEmployerId() {
         return employerId;
     }
@@ -60,6 +102,11 @@ public class JobForm {
     public void setEmployerId(int employerId) {
         this.employerId = employerId;
     }
+
+
+
+
+    //Getters and Setters for ArrayList objects
 
     public ArrayList<Employer> getEmployers() {
         return employers;

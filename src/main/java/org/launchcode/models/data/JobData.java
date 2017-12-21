@@ -19,12 +19,12 @@ public class JobData {
     private JobFieldData<CoreCompetency> coreCompetencies = new JobFieldData<>();
     private JobFieldData<PositionType> positionTypes = new JobFieldData<>();
 
-
+    //getAll from JobFieldData
     private JobData() {
         JobDataImporter.loadData(this);
     }
 
-
+    //get a job - for ListController and SearchController
     public static JobData getInstance() {
         if (instance == null) {
             instance = new JobData();
@@ -32,6 +32,7 @@ public class JobData {
         return instance;
     }
 
+    //findById  -loop through the arraylist for a job using Id
     public Job findById(int id) {
         for (Job job : jobs) {
             if (job.getId() == id)
